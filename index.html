@@ -1103,7 +1103,7 @@
       </div>
       <div class="form-group">
         <label class="form-label">WhatsApp</label>
-        <input type="tel" name="whatsapp" class="form-input" placeholder="(11) 99999-9999" required>
+        <input type="tel" name="whatsapp" id="whatsappInput" class="form-input" placeholder="(11) 99999-9999" required>
       </div>
       <div class="form-group">
         <label class="form-label">E-mail</label>
@@ -1187,6 +1187,15 @@ async function submitForm(event) {
     alert('Erro ao enviar. Tente novamente ou fale pelo WhatsApp.');
   }
 }
+
+// Máscara telefone
+document.getElementById('whatsappInput').addEventListener('input', function(e) {
+  let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+  if (v.length > 6) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+  else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+  else if (v.length > 0) v = '(' + v;
+  e.target.value = v;
+});
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
