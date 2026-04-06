@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terceirização Comercial — Eduardo Willrich</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #22c55e;
+    --green-dark: #166534;
+    --green-dim: rgba(34,197,94,0.12);
+    --green-border: rgba(34,197,94,0.2);
+    --bg: #080808;
+    --bg2: #0d0d0d;
+    --bg3: #111;
+    --white: #ffffff;
+    --gray: #9ca3af;
+    --gray2: #6b7280;
+    --red: #ef4444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Geist', sans-serif;
+    line-height: 1.05;
+  }
+
+  /* ── NOISE TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8,8,8,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(34,197,94,0.08);
+  }
+
+  .nav-logo {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo span { color: var(--green); }
+
+  .nav-cta {
+    background: var(--green);
+    color: #000;
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s;
+  }
+
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--green-border);
+  }
+
+  .hero-bg-circle:nth-child(1) { width: 800px; height: 800px; right: -300px; top: -200px; }
+  .hero-bg-circle:nth-child(2) { width: 550px; height: 550px; right: -150px; top: -50px; }
+  .hero-bg-circle:nth-child(3) { width: 300px; height: 300px; right: 0px; top: 100px; border-color: rgba(34,197,94,0.35); }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    right: -100px;
+    top: -100px;
+    background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-lines {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    opacity: 0.3;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--green-dim);
+    border: 1px solid var(--green-border);
+    border-radius: 100px;
+    padding: 8px 20px;
+    margin-bottom: 36px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-badge-dot {
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-badge span {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 7vw, 88px);
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero-title .hl { color: var(--green); }
+
+  .hero-title .line-through {
+    position: relative;
+    color: var(--gray2);
+  }
+
+  .hero-title .line-through::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: 50%;
+    height: 3px;
+    background: var(--red);
+    transform: translateY(-50%);
+  }
+
+  .hero-sub {
+    font-size: 20px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 48px;
+    max-width: 560px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-sub strong { color: var(--white); font-weight: 500; }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: #000;
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 18px 36px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary:hover { background: #16a34a; transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 18px 36px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--green); color: var(--green); }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .hero-stat-num {
+    font-family: 'Geist', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 13px;
+    color: var(--gray2);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section {
+    padding: 100px 5%;
+    position: relative;
+  }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-tag-dash {
+    width: 32px; height: 3px;
+    background: var(--green);
+  }
+
+  .section-tag span {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+  }
+
+  .section-title .hl { color: var(--green); }
+
+  .section-sub {
+    font-size: 18px;
+    color: var(--gray);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 64px;
+  }
+
+  /* ── PAIN SECTION ── */
+  .pain { background: var(--bg2); }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .pain-card {
+    background: rgba(239,68,68,0.05);
+    border: 1px solid rgba(239,68,68,0.15);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+
+  .pain-card:hover { border-color: rgba(239,68,68,0.35); }
+
+  .pain-icon {
+    width: 48px; height: 48px;
+    background: rgba(239,68,68,0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 22px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .pain-card-title {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .pain-card-text { color: var(--gray); font-size: 15px; line-height: 1.6; }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--bg); }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    max-width: 760px;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 60px;
+    bottom: 60px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--green) 0%, transparent 100%);
+    opacity: 0.3;
+  }
+
+  .step {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.2s;
+  }
+
+  .step:last-child { border-bottom: none; }
+  .step:hover .step-num { background: var(--green); color: #000; }
+
+  .step-num {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--green-dim);
+    border: 2px solid var(--green-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Geist', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--green);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .step-title {
+    font-family: 'Geist', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .step-title .hl { color: var(--green); }
+  .step-text { color: var(--gray); font-size: 16px; line-height: 1.7; }
+
+  /* ── BENEFITS ── */
+  .benefits { background: var(--bg2); }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .benefit-card {
+    background: var(--green-dim);
+    border: 1px solid var(--green-border);
+    border-radius: 16px;
+    padding: 36px 28px;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--green);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .benefit-card:hover { transform: translateY(-4px); border-color: rgba(34,197,94,0.4); }
+  .benefit-card:hover::before { opacity: 1; }
+
+  .benefit-icon {
+    width: 52px; height: 52px;
+    background: rgba(34,197,94,0.15);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .benefit-icon svg { width: 26px; height: 26px; }
+
+  .benefit-title {
+    font-family: 'Geist', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .benefit-text { color: var(--gray); font-size: 15px; line-height: 1.65; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--bg); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    background: var(--bg2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.2s;
+  }
+
+  .testimonial-card:hover { border-color: var(--green-border); }
+
+  .testimonial-stars {
+    display: flex; gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .star { color: var(--green); font-size: 18px; }
+
+  .testimonial-text {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--green-dim);
+    border: 2px solid var(--green-border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    color: var(--green);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .testimonial-name {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .testimonial-role { color: var(--gray2); font-size: 13px; }
+
+  /* ── FAQ ── */
+  .faq { background: var(--bg2); }
+
+  .faq-list { max-width: 760px; display: flex; flex-direction: column; gap: 0; }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    padding: 28px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.2s;
+  }
+
+  .faq-question:hover { color: var(--green); }
+
+  .faq-icon {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--green-dim);
+    border: 1px solid var(--green-border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--green);
+    font-size: 20px;
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  .faq-item.open .faq-icon { background: var(--green); color: #000; transform: rotate(45deg); }
+
+  .faq-answer {
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.75;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+  }
+
+  .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 28px; }
+
+  /* ── FORM SECTION ── */
+  .form-section {
+    background: var(--bg);
+    padding: 100px 5%;
+  }
+
+  .form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .form-left .section-sub { margin-bottom: 40px; }
+
+  .form-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-perk {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--gray);
+    font-size: 15px;
+  }
+
+  .form-perk-dot {
+    width: 24px; height: 24px;
+    background: var(--green);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .form-perk-dot svg { width: 12px; height: 12px; }
+
+  .form-right {
+    background: var(--bg2);
+    border: 1px solid rgba(34,197,94,0.15);
+    border-radius: 20px;
+    padding: 48px;
+  }
+
+  .form-title {
+    font-family: 'Geist', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .form-subtitle { color: var(--gray); font-size: 15px; margin-bottom: 36px; }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .form-input, .form-select {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 16px 20px;
+    color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    outline: none;
+    appearance: none;
+  }
+
+  .form-input:focus, .form-select:focus { border-color: var(--green); }
+  .form-input::placeholder { color: var(--gray2); }
+  .form-select option { background: #1a1a1a; color: var(--white); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--green);
+    color: #000;
+    font-family: 'Geist', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    padding: 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .form-submit:hover { background: #16a34a; transform: translateY(-2px); }
+
+  .form-whatsapp {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(34,197,94,0.3);
+    color: var(--green);
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .form-whatsapp:hover { background: var(--green-dim); border-color: var(--green); }
+
+  .form-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+    color: var(--gray2);
+    font-size: 13px;
+  }
+
+  .form-divider::before, .form-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg2);
+    border-top: 1px solid rgba(34,197,94,0.1);
+    padding: 40px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    font-family: 'Geist', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--white);
+  }
+
+  .footer-brand span { color: var(--green); }
+  .footer-copy { color: var(--gray2); font-size: 13px; }
+
+  /* ── FLOATING WHATSAPP ── */
+  .wa-float {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 60px; height: 60px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(34,197,94,0.35);
+    z-index: 99;
+    transition: all 0.2s;
+    animation: bounceIn 0.6s 1s ease both;
+  }
+
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(34,197,94,0.5); }
+
+  .wa-float svg { width: 28px; height: 28px; }
+
+  @keyframes bounceIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .pain-grid, .benefits-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .form-wrapper { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Eduardo <span>Willrich</span></div>
+  <a href="#formulario" class="nav-cta">Quero meu time comercial →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-lines"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Terceirização Comercial</span>
+    </div>
+    <h1 class="hero-title">
+      Chega de perder vendas<br>por <span class="line-through">falta de time</span><br><span class="hl">comercial.</span>
+    </h1>
+    <p class="hero-sub">
+      Meu time assume sua operação de vendas do zero. <strong>SDR prospectando, Closer fechando</strong> — tudo treinado, gerenciado e sem risco trabalhista.
+    </p>
+    <div class="hero-actions">
+      <a href="#formulario" class="btn-primary">
+        Quero meu time agora
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#como-funciona" class="btn-secondary">
+        Como funciona
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">SDR</div>
+        <div class="hero-stat-label">Prospecção ativa inclusa</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">0</div>
+        <div class="hero-stat-label">Risco trabalhista</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">D1</div>
+        <div class="hero-stat-label">Time operacional desde o dia 1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="section-tag"><span class="section-tag-dash"></span><span>A realidade de quem tenta sozinho</span></div>
+  <h2 class="section-title">Montar equipe comercial<br>é <span class="hl">caro, lento e arriscado.</span></h2>
+  <p class="section-sub">Esses são os 4 problemas que travam o crescimento da maioria das empresas.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">✕</div>
+      <div>
+        <div class="pain-card-title">Contratação cara e demorada</div>
+        <div class="pain-card-text">Processos seletivos longos, salários altos e ainda a incerteza se o profissional vai performar.</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">✕</div>
+      <div>
+        <div class="pain-card-title">Treinamento consome tempo</div>
+        <div class="pain-card-text">Meses de onboarding antes de ver resultado. Enquanto isso, seu produto fica sem ser vendido.</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">✕</div>
+      <div>
+        <div class="pain-card-title">Risco trabalhista constante</div>
+        <div class="pain-card-text">CLT, encargos, rescisão, processos. Uma dor de cabeça que tira o foco do que realmente importa.</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">✕</div>
+      <div>
+        <div class="pain-card-title">Empresa para de vender</div>
+        <div class="pain-card-text">Enquanto você resolve problemas de RH, seu concorrente está fechando negócio com seu cliente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="como-funciona">
+  <div class="section-tag"><span class="section-tag-dash"></span><span>Como funciona</span></div>
+  <h2 class="section-title">Simples, rápido<br>e <span class="hl">sem burocracia.</span></h2>
+  <p class="section-sub">Em poucos dias seu time comercial já está em campo vendendo seu produto.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <div class="step-title">Alinhamento de <span class="hl">produto e ICP</span></div>
+        <div class="step-text">Fazemos uma imersão no seu produto, proposta de valor e perfil ideal de cliente. Sem isso, ninguém vende com consistência.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <div class="step-title">Treinamento da <span class="hl">equipe comercial</span></div>
+        <div class="step-text">SDR e Closer são treinados especificamente para o seu negócio. Objeções, pitch, argumentação — tudo mapeado e preparado.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <div class="step-title">Operação <span class="hl">ativa desde o dia 1</span></div>
+        <div class="step-text">O SDR começa a prospectar, agendar e qualificar. O Closer entra para fechar. Gestão e relatórios inclusos.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div>
+        <div class="step-title">Escala <span class="hl">conforme sua demanda</span></div>
+        <div class="step-text">Precisa de mais volume? A estrutura cresce junto com você — sem contratar, sem burocracia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="section-tag"><span class="section-tag-dash"></span><span>Diferenciais</span></div>
+  <h2 class="section-title">Tudo que você precisa.<br><span class="hl">Nada que te atrapalha.</span></h2>
+  <p class="section-sub">Uma operação completa, pronta para rodar desde o primeiro dia.</p>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="benefit-title">SDR + Closer prontos</div>
+      <div class="benefit-text">Time completo treinado para o seu produto. Sem processo seletivo, sem onboarding demorado.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="benefit-title">Zero risco trabalhista</div>
+      <div class="benefit-text">Sem CLT, sem encargos, sem rescisão. Toda a responsabilidade é nossa. Você foca no crescimento.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="benefit-title">Resultado desde o dia 1</div>
+      <div class="benefit-text">Operação ativa imediatamente. Sem período de adaptação longo antes de ver o time funcionar.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20v-6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="benefit-title">Escala com sua demanda</div>
+      <div class="benefit-text">O time cresce conforme o seu negócio cresce. Flexibilidade total sem burocracia de contratação.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="benefit-title">Gestão e relatórios inclusos</div>
+      <div class="benefit-text">Acompanhamento de métricas, funil e performance. Você sabe exatamente o que está acontecendo.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="benefit-title">Processo customizado</div>
+      <div class="benefit-text">Cada operação é desenhada para o seu produto, público e ciclo de venda. Nada genérico.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-tag"><span class="section-tag-dash"></span><span>Prova social</span></div>
+  <h2 class="section-title">O que nossos clientes<br><span class="hl">estão dizendo.</span></h2>
+  <p class="section-sub">Empresas que pararam de se preocupar com equipe e começaram a focar em crescimento.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Em menos de 2 semanas já tínhamos o time prospectando. A diferença foi imediata — mais reuniões, mais propostas, mais fechamentos."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">Marcos F.</div>
+          <div class="testimonial-role">CEO · Empresa de SaaS</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Tentei montar time interno por 8 meses sem resultado. Com a terceirização, em 30 dias já tinha processo rodando e vendas acontecendo."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">RC</div>
+        <div>
+          <div class="testimonial-name">Renata C.</div>
+          <div class="testimonial-role">Diretora Comercial</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"O melhor foi poder focar no produto enquanto o time cuidava da prospecção. Zero dor de cabeça com RH. Só resultado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">TL</div>
+        <div>
+          <div class="testimonial-name">Thiago L.</div>
+          <div class="testimonial-role">Fundador · Consultoria</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-tag"><span class="section-tag-dash"></span><span>Dúvidas frequentes</span></div>
+  <h2 class="section-title">Perguntas que você<br><span class="hl">provavelmente tem.</span></h2>
+  <p class="section-sub">Respondemos as dúvidas mais comuns antes de você entrar em contato.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Como funciona o treinamento da equipe?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Fazemos uma imersão completa no seu produto, processo de vendas e perfil de cliente ideal. O time é treinado com script personalizado, contorno de objeções e playbook específico para o seu negócio antes de iniciar a operação.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Quanto tempo leva para o time começar?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Após o alinhamento inicial, o time entra em operação em até 7 dias úteis. O processo de imersão e treinamento é rápido e focado para que você veja resultado o quanto antes.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Tenho algum risco trabalhista?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Nenhum. Toda a responsabilidade trabalhista é nossa. Você contrata uma operação de resultados, não funcionários. Sem CLT, sem encargos, sem risco de processos.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Para qual tipo de empresa funciona?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Funciona para empresas B2B que precisam de prospecção ativa e fechamento de vendas. Especialmente indicado para negócios com ticket médio a alto que precisam de uma abordagem consultiva.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Como acompanho os resultados?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Você recebe relatórios periódicos com métricas de prospecção, taxa de agendamento, conversão e receita gerada. Reuniões de alinhamento semanais para ajustes na estratégia.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="formulario">
+  <div class="form-wrapper">
+    <div class="form-left">
+      <div class="section-tag"><span class="section-tag-dash"></span><span>Próximo passo</span></div>
+      <h2 class="section-title">Pronto para ter<br>um time vendendo<br><span class="hl">por você?</span></h2>
+      <p class="section-sub">Preencha o formulário ou fale direto pelo WhatsApp. Vagas limitadas por mês.</p>
+      <div class="form-perks">
+        <div class="form-perk">
+          <div class="form-perk-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Retorno em até 24 horas úteis
+        </div>
+        <div class="form-perk">
+          <div class="form-perk-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Diagnóstico comercial gratuito
+        </div>
+        <div class="form-perk">
+          <div class="form-perk-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Sem compromisso na primeira conversa
+        </div>
+        <div class="form-perk">
+          <div class="form-perk-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Proposta personalizada para o seu negócio
+        </div>
+      </div>
+    </div>
+    <div class="form-right">
+      <div class="form-title">Fale com a gente</div>
+      <div class="form-subtitle">Preencha os dados abaixo e entraremos em contato.</div>
+      <form id="contactForm" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Nome</label>
+          <input type="text" name="nome" class="form-input" placeholder="Seu nome completo" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Empresa</label>
+          <input type="text" name="empresa" class="form-input" placeholder="Nome da empresa" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">WhatsApp</label>
+        <input type="tel" name="whatsapp" class="form-input" placeholder="(11) 99999-9999" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">E-mail</label>
+        <input type="email" name="email" class="form-input" placeholder="seu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Faturamento mensal</label>
+        <select name="faturamento" class="form-select" required>
+          <option value="" disabled selected>Selecione uma faixa</option>
+          <option>Até R$ 50 mil</option>
+          <option>R$ 50 mil a R$ 200 mil</option>
+          <option>R$ 200 mil a R$ 500 mil</option>
+          <option>Acima de R$ 500 mil</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Principal desafio comercial</label>
+        <select name="desafio" class="form-select" required>
+          <option value="" disabled selected>Selecione seu desafio</option>
+          <option>Falta de time para prospectar</option>
+          <option>Dificuldade em fechar vendas</option>
+          <option>Alto custo com equipe interna</option>
+          <option>Não tenho processo comercial definido</option>
+        </select>
+      </div>
+      <button class="form-submit" type="submit" id="submitBtn">Quero meu time comercial →</button>
+      </form>
+      <div class="form-divider">ou</div>
+      <a href="https://wa.me/5515996562134?text=Ol%C3%A1%20Eduardo%2C%20quero%20saber%20sobre%20terceiriza%C3%A7%C3%A3o%20comercial" target="_blank" class="form-whatsapp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#22c55e"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Eduardo <span>Willrich</span></div>
+  <div class="footer-copy">© 2026 · Terceirização Comercial · @eduwillrich</div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/5515996562134?text=Ol%C3%A1%20Eduardo%2C%20quero%20saber%20sobre%20terceiriza%C3%A7%C3%A3o%20comercial" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+async function submitForm(event) {
+  event.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const form = document.getElementById('contactForm');
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  const data = new FormData(form);
+
+  try {
+    const res = await fetch('https://formspree.io/f/mkopkkeq', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      form.innerHTML = '<div style="text-align:center;padding:40px 0"><div style="font-size:48px;margin-bottom:16px">✅</div><div style="font-family:Geist,sans-serif;font-size:22px;font-weight:800;margin-bottom:8px">Mensagem enviada!</div><div style="color:#9ca3af;font-size:15px">Entraremos em contato em até 24 horas úteis.</div></div>';
+    } else {
+      throw new Error();
+    }
+  } catch {
+    btn.disabled = false;
+    btn.textContent = 'Quero meu time comercial →';
+    alert('Erro ao enviar. Tente novamente ou fale pelo WhatsApp.');
+  }
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.pain-card, .benefit-card, .step, .testimonial-card, .faq-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
