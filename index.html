@@ -812,41 +812,247 @@
     <div class="hero-glow"></div>
     <div class="hero-lines"></div>
   </div>
-  <div class="hero-content">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-      <span>Terceirização Comercial</span>
-    </div>
-    <h1 class="hero-title">
-      Chega de perder vendas<br>por <span class="line-through">falta de time</span><br><span class="hl">comercial.</span>
-    </h1>
-    <p class="hero-sub">
-      Meu time assume sua operação de vendas do zero. <strong>SDR prospectando, Closer fechando</strong> — tudo treinado, gerenciado e sem risco trabalhista.
-    </p>
-    <div class="hero-actions">
-      <a href="#formulario" class="btn-primary">
-        Quero meu time agora
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#como-funciona" class="btn-secondary">
-        Como funciona
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-num">SDR</div>
-        <div class="hero-stat-label">Prospecção ativa inclusa</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%;position:relative;z-index:1;">
+
+    <!-- LEFT: copy -->
+    <div class="hero-content" style="max-width:100%;">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Terceirização Comercial</span>
       </div>
-      <div>
-        <div class="hero-stat-num">0</div>
-        <div class="hero-stat-label">Risco trabalhista</div>
+      <h1 class="hero-title">
+        Chega de perder vendas por<br><del style="color:var(--gray2);text-decoration:line-through;text-decoration-color:#ef4444;text-decoration-thickness:3px;white-space:nowrap;">falta de time comercial.</del><br><span class="hl">Isso é passado.</span>
+      </h1>
+      <p class="hero-sub">
+        Meu time assume sua operação de vendas do zero. <strong>SDR qualificando, Closer fechando</strong> — tudo treinado, gerenciado e sem risco trabalhista.
+      </p>
+      <div class="hero-actions">
+        <a href="#formulario" class="btn-primary">
+          Quero meu time agora
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#como-funciona" class="btn-secondary">
+          Como funciona
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
-      <div>
-        <div class="hero-stat-num">D1</div>
-        <div class="hero-stat-label">Time operacional desde o dia 1</div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">SDR</div>
+          <div class="hero-stat-label">Prospecção e qualificação</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">0</div>
+          <div class="hero-stat-label">Risco trabalhista</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">21d</div>
+          <div class="hero-stat-label">Time operacional em 21 dias</div>
+        </div>
       </div>
     </div>
+
+    <!-- RIGHT: office illustration -->
+    <div style="position:relative;">
+      <div style="position:absolute;inset:-40px;background:radial-gradient(circle at 50% 50%, rgba(34,197,94,0.12) 0%, transparent 70%);border-radius:50%;pointer-events:none;"></div>
+      <div style="background:#0d0d0d;border:1px solid rgba(34,197,94,0.2);border-radius:20px;overflow:hidden;position:relative;">
+        <div style="background:#111;border-bottom:1px solid rgba(34,197,94,0.12);padding:14px 20px;display:flex;align-items:center;gap:10px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#ef4444;opacity:0.7;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#f59e0b;opacity:0.7;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#22c55e;opacity:0.7;"></div>
+          <div style="flex:1;background:rgba(255,255,255,0.05);border-radius:6px;height:22px;margin-left:8px;display:flex;align-items:center;padding:0 12px;">
+            <span style="color:rgba(255,255,255,0.3);font-size:11px;font-family:monospace;">operacao-comercial.live</span>
+          </div>
+        </div>
+        <svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <defs>
+            <radialGradient id="roomGlow" cx="50%" cy="40%" r="55%">
+              <stop offset="0%" stop-color="#22c55e" stop-opacity="0.08"/>
+              <stop offset="100%" stop-color="#080808" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="560" height="420" fill="#0a0a0a"/>
+          <rect width="560" height="420" fill="url(#roomGlow)"/>
+          <g stroke="#22c55e" stroke-opacity="0.04" stroke-width="0.5">
+            <line x1="0" y1="350" x2="560" y2="350"/><line x1="0" y1="370" x2="560" y2="370"/><line x1="0" y1="390" x2="560" y2="390"/><line x1="0" y1="410" x2="560" y2="410"/>
+            <line x1="280" y1="200" x2="0" y2="420"/><line x1="280" y1="200" x2="140" y2="420"/><line x1="280" y1="200" x2="280" y2="420"/><line x1="280" y1="200" x2="420" y2="420"/><line x1="280" y1="200" x2="560" y2="420"/>
+          </g>
+          <rect x="0" y="0" width="560" height="220" fill="rgba(34,197,94,0.02)"/>
+          <line x1="0" y1="220" x2="560" y2="220" stroke="#22c55e" stroke-opacity="0.08" stroke-width="1"/>
+          <rect x="20" y="20" width="100" height="70" rx="4" fill="none" stroke="#22c55e" stroke-opacity="0.15" stroke-width="1.5"/>
+          <line x1="70" y1="20" x2="70" y2="90" stroke="#22c55e" stroke-opacity="0.1" stroke-width="1"/>
+          <line x1="20" y1="55" x2="120" y2="55" stroke="#22c55e" stroke-opacity="0.1" stroke-width="1"/>
+          <rect x="20" y="20" width="100" height="70" rx="4" fill="rgba(34,197,94,0.03)"/>
+          <rect x="180" y="15" width="200" height="120" rx="6" fill="#111" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5"/>
+          <rect x="190" y="25" width="180" height="100" rx="4" fill="#0d0d0d"/>
+          <text x="280" y="42" text-anchor="middle" font-size="8" fill="#22c55e" fill-opacity="0.6" font-family="monospace">PAINEL COMERCIAL — AO VIVO</text>
+          <g fill="#22c55e" fill-opacity="0.5">
+            <rect x="200" y="80" width="14" height="30"/><rect x="218" y="65" width="14" height="45"/><rect x="236" y="55" width="14" height="55"/><rect x="254" y="45" width="14" height="65"/><rect x="272" y="50" width="14" height="60"/><rect x="290" y="38" width="14" height="72"/><rect x="308" y="30" width="14" height="80"/><rect x="326" y="35" width="14" height="75"/><rect x="344" y="25" width="14" height="85"/>
+          </g>
+          <line x1="195" y1="112" x2="365" y2="112" stroke="#22c55e" stroke-opacity="0.2" stroke-width="0.5"/>
+          <rect x="195" y="118" width="48" height="14" rx="3" fill="rgba(34,197,94,0.15)"/>
+          <text x="219" y="128" text-anchor="middle" font-size="7" fill="#22c55e" font-family="monospace">127 calls</text>
+          <rect x="248" y="118" width="48" height="14" rx="3" fill="rgba(34,197,94,0.15)"/>
+          <text x="272" y="128" text-anchor="middle" font-size="7" fill="#22c55e" font-family="monospace">43 deals</text>
+          <rect x="301" y="118" width="48" height="14" rx="3" fill="rgba(34,197,94,0.15)"/>
+          <text x="325" y="128" text-anchor="middle" font-size="7" fill="#22c55e" font-family="monospace">R$87k</text>
+          <rect x="275" y="135" width="10" height="15" fill="#1a1a1a"/>
+          <rect x="260" y="150" width="40" height="4" rx="2" fill="#1a1a1a"/>
+          <rect x="30" y="195" width="60" height="30" rx="3" fill="#141414" stroke="#22c55e" stroke-opacity="0.15" stroke-width="1"/>
+          <rect x="45" y="178" width="30" height="20" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <rect x="48" y="180" width="24" height="16" rx="1" fill="#0a0a0a"/>
+          <rect x="50" y="182" width="20" height="12" rx="1" fill="rgba(34,197,94,0.08)"/>
+          <circle cx="60" cy="162" r="8" fill="#1a2a1a" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+          <rect x="51" y="170" width="18" height="12" rx="4" fill="#1a2a1a" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M52 161 Q52 153 60 153 Q68 153 68 161" fill="none" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1.5"/>
+          <rect x="50" y="159" width="4" height="5" rx="2" fill="#22c55e" fill-opacity="0.5"/>
+          <rect x="66" y="159" width="4" height="5" rx="2" fill="#22c55e" fill-opacity="0.5"/>
+          <rect x="110" y="195" width="60" height="30" rx="3" fill="#141414" stroke="#22c55e" stroke-opacity="0.15" stroke-width="1"/>
+          <rect x="125" y="178" width="30" height="20" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <rect x="128" y="180" width="24" height="16" rx="1" fill="#0a0a0a"/>
+          <rect x="130" y="182" width="20" height="12" rx="1" fill="rgba(34,197,94,0.1)"/>
+          <circle cx="140" cy="162" r="8" fill="#1a2a1a" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+          <rect x="131" y="170" width="18" height="12" rx="4" fill="#1a2a1a" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M132 161 Q132 153 140 153 Q148 153 148 161" fill="none" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1.5"/>
+          <rect x="130" y="159" width="4" height="5" rx="2" fill="#22c55e" fill-opacity="0.5"/>
+          <rect x="146" y="159" width="4" height="5" rx="2" fill="#22c55e" fill-opacity="0.5"/>
+          <rect x="390" y="195" width="60" height="30" rx="3" fill="#141414" stroke="#22c55e" stroke-opacity="0.15" stroke-width="1"/>
+          <rect x="405" y="178" width="30" height="20" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <rect x="408" y="180" width="24" height="16" rx="1" fill="#0a0a0a"/>
+          <rect x="410" y="182" width="20" height="12" rx="1" fill="rgba(34,197,94,0.07)"/>
+          <circle cx="420" cy="162" r="8" fill="#1a2a1a" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+          <rect x="411" y="170" width="18" height="12" rx="4" fill="#1a2a1a" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M412 161 Q412 153 420 153 Q428 153 428 161" fill="none" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1.5"/>
+          <rect x="410" y="159" width="4" height="5" rx="2" fill="#22c55e" fill-opacity="0.5"/>
+          <rect x="426" y="159" width="4" height="5" rx="2" fill="#22c55e" fill-opacity="0.5"/>
+          <rect x="470" y="195" width="60" height="30" rx="3" fill="#141414" stroke="#22c55e" stroke-opacity="0.15" stroke-width="1"/>
+          <rect x="485" y="178" width="30" height="20" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <rect x="488" y="180" width="24" height="16" rx="1" fill="#0a0a0a"/>
+          <rect x="490" y="182" width="20" height="12" rx="1" fill="rgba(34,197,94,0.12)"/>
+          <circle cx="500" cy="162" r="8" fill="#1a2a1a" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+          <rect x="491" y="170" width="18" height="12" rx="4" fill="#1a2a1a" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M492 161 Q492 153 500 153 Q508 153 508 161" fill="none" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1.5"/>
+          <rect x="490" y="159" width="4" height="5" rx="2" fill="#22c55e" fill-opacity="0.5"/>
+          <rect x="506" y="159" width="4" height="5" rx="2" fill="#22c55e" fill-opacity="0.5"/>
+          <rect x="10" y="285" width="70" height="35" rx="3" fill="#131313" stroke="#22c55e" stroke-opacity="0.18" stroke-width="1"/>
+          <rect x="22" y="265" width="35" height="23" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1"/>
+          <rect x="25" y="268" width="29" height="17" rx="1" fill="rgba(34,197,94,0.1)"/>
+          <circle cx="45" cy="248" r="10" fill="#182818" stroke="#22c55e" stroke-opacity="0.45" stroke-width="1.5"/>
+          <rect x="35" y="258" width="20" height="14" rx="5" fill="#182818" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M35 247 Q35 237 45 237 Q55 237 55 247" fill="none" stroke="#22c55e" stroke-opacity="0.55" stroke-width="1.5"/>
+          <rect x="33" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="52" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="100" y="285" width="70" height="35" rx="3" fill="#131313" stroke="#22c55e" stroke-opacity="0.18" stroke-width="1"/>
+          <rect x="112" y="265" width="35" height="23" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1"/>
+          <rect x="115" y="268" width="29" height="17" rx="1" fill="rgba(34,197,94,0.07)"/>
+          <circle cx="135" cy="248" r="10" fill="#182818" stroke="#22c55e" stroke-opacity="0.45" stroke-width="1.5"/>
+          <rect x="125" y="258" width="20" height="14" rx="5" fill="#182818" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M125 247 Q125 237 135 237 Q145 237 145 247" fill="none" stroke="#22c55e" stroke-opacity="0.55" stroke-width="1.5"/>
+          <rect x="123" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="142" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="195" y="285" width="70" height="35" rx="3" fill="#131313" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <rect x="207" y="265" width="35" height="23" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1"/>
+          <rect x="210" y="268" width="29" height="17" rx="1" fill="rgba(34,197,94,0.13)"/>
+          <circle cx="225" cy="248" r="10" fill="#182818" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1.5"/>
+          <rect x="215" y="258" width="20" height="14" rx="5" fill="#182818" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M215 247 Q215 237 225 237 Q235 237 235 247" fill="none" stroke="#22c55e" stroke-opacity="0.6" stroke-width="1.5"/>
+          <rect x="213" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="232" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="290" y="285" width="70" height="35" rx="3" fill="#131313" stroke="#22c55e" stroke-opacity="0.18" stroke-width="1"/>
+          <rect x="302" y="265" width="35" height="23" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1"/>
+          <rect x="305" y="268" width="29" height="17" rx="1" fill="rgba(34,197,94,0.09)"/>
+          <circle cx="325" cy="248" r="10" fill="#182818" stroke="#22c55e" stroke-opacity="0.45" stroke-width="1.5"/>
+          <rect x="315" y="258" width="20" height="14" rx="5" fill="#182818" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M315 247 Q315 237 325 237 Q335 237 335 247" fill="none" stroke="#22c55e" stroke-opacity="0.55" stroke-width="1.5"/>
+          <rect x="313" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="332" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="385" y="285" width="70" height="35" rx="3" fill="#131313" stroke="#22c55e" stroke-opacity="0.18" stroke-width="1"/>
+          <rect x="397" y="265" width="35" height="23" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1"/>
+          <rect x="400" y="268" width="29" height="17" rx="1" fill="rgba(34,197,94,0.11)"/>
+          <circle cx="415" cy="248" r="10" fill="#182818" stroke="#22c55e" stroke-opacity="0.45" stroke-width="1.5"/>
+          <rect x="405" y="258" width="20" height="14" rx="5" fill="#182818" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M405 247 Q405 237 415 237 Q425 237 425 247" fill="none" stroke="#22c55e" stroke-opacity="0.55" stroke-width="1.5"/>
+          <rect x="403" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="422" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="480" y="285" width="70" height="35" rx="3" fill="#131313" stroke="#22c55e" stroke-opacity="0.18" stroke-width="1"/>
+          <rect x="492" y="265" width="35" height="23" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1"/>
+          <rect x="495" y="268" width="29" height="17" rx="1" fill="rgba(34,197,94,0.08)"/>
+          <circle cx="510" cy="248" r="10" fill="#182818" stroke="#22c55e" stroke-opacity="0.45" stroke-width="1.5"/>
+          <rect x="500" y="258" width="20" height="14" rx="5" fill="#182818" stroke="#22c55e" stroke-opacity="0.2" stroke-width="1"/>
+          <path d="M500 247 Q500 237 510 237 Q520 237 520 247" fill="none" stroke="#22c55e" stroke-opacity="0.55" stroke-width="1.5"/>
+          <rect x="498" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="517" y="245" width="5" height="6" rx="2.5" fill="#22c55e" fill-opacity="0.6"/>
+          <rect x="20" y="358" width="100" height="45" rx="4" fill="#121212" stroke="#22c55e" stroke-opacity="0.22" stroke-width="1.5"/>
+          <rect x="38" y="330" width="45" height="30" rx="3" fill="#111" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+          <rect x="41" y="333" width="39" height="24" rx="2" fill="rgba(34,197,94,0.1)"/>
+          <rect x="85" y="333" width="30" height="22" rx="2" fill="#111" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <rect x="87" y="335" width="26" height="18" rx="1" fill="rgba(34,197,94,0.06)"/>
+          <circle cx="70" cy="312" r="13" fill="#182818" stroke="#22c55e" stroke-opacity="0.5" stroke-width="2"/>
+          <rect x="57" y="325" width="26" height="18" rx="6" fill="#182818" stroke="#22c55e" stroke-opacity="0.25" stroke-width="1"/>
+          <path d="M57 311 Q57 298 70 298 Q83 298 83 311" fill="none" stroke="#22c55e" stroke-opacity="0.65" stroke-width="2"/>
+          <rect x="54" y="308" width="6" height="8" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="70" y="305" width="3" height="6" rx="1.5" fill="#22c55e" fill-opacity="0.4"/>
+          <rect x="73" y="308" width="6" height="8" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="84" y="298" width="38" height="18" rx="6" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <text x="103" y="310" text-anchor="middle" font-size="7" fill="#22c55e" fill-opacity="0.8" font-family="monospace">Ligando...</text>
+          <polygon points="88,316 84,322 94,316" fill="rgba(34,197,94,0.12)"/>
+          <rect x="145" y="358" width="100" height="45" rx="4" fill="#121212" stroke="#22c55e" stroke-opacity="0.22" stroke-width="1.5"/>
+          <rect x="163" y="330" width="45" height="30" rx="3" fill="#111" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+          <rect x="166" y="333" width="39" height="24" rx="2" fill="rgba(34,197,94,0.08)"/>
+          <circle cx="195" cy="312" r="13" fill="#182818" stroke="#22c55e" stroke-opacity="0.5" stroke-width="2"/>
+          <rect x="182" y="325" width="26" height="18" rx="6" fill="#182818" stroke="#22c55e" stroke-opacity="0.25" stroke-width="1"/>
+          <path d="M182 311 Q182 298 195 298 Q208 298 208 311" fill="none" stroke="#22c55e" stroke-opacity="0.65" stroke-width="2"/>
+          <rect x="179" y="308" width="6" height="8" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="198" y="308" width="6" height="8" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="210" y="298" width="42" height="18" rx="6" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <text x="231" y="310" text-anchor="middle" font-size="7" fill="#22c55e" fill-opacity="0.8" font-family="monospace">Fechando!</text>
+          <polygon points="213,316 209,322 219,316" fill="rgba(34,197,94,0.12)"/>
+          <rect x="315" y="358" width="100" height="45" rx="4" fill="#121212" stroke="#22c55e" stroke-opacity="0.22" stroke-width="1.5"/>
+          <rect x="333" y="330" width="45" height="30" rx="3" fill="#111" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+          <rect x="336" y="333" width="39" height="24" rx="2" fill="rgba(34,197,94,0.11)"/>
+          <circle cx="365" cy="312" r="13" fill="#182818" stroke="#22c55e" stroke-opacity="0.5" stroke-width="2"/>
+          <rect x="352" y="325" width="26" height="18" rx="6" fill="#182818" stroke="#22c55e" stroke-opacity="0.25" stroke-width="1"/>
+          <path d="M352 311 Q352 298 365 298 Q378 298 378 311" fill="none" stroke="#22c55e" stroke-opacity="0.65" stroke-width="2"/>
+          <rect x="349" y="308" width="6" height="8" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="368" y="308" width="6" height="8" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="378" y="298" width="38" height="18" rx="6" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <text x="397" y="310" text-anchor="middle" font-size="7" fill="#22c55e" fill-opacity="0.8" font-family="monospace">Agendou!</text>
+          <polygon points="381,316 377,322 387,316" fill="rgba(34,197,94,0.12)"/>
+          <rect x="440" y="358" width="100" height="45" rx="4" fill="#121212" stroke="#22c55e" stroke-opacity="0.22" stroke-width="1.5"/>
+          <rect x="458" y="330" width="45" height="30" rx="3" fill="#111" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+          <rect x="461" y="333" width="39" height="24" rx="2" fill="rgba(34,197,94,0.09)"/>
+          <circle cx="490" cy="312" r="13" fill="#182818" stroke="#22c55e" stroke-opacity="0.5" stroke-width="2"/>
+          <rect x="477" y="325" width="26" height="18" rx="6" fill="#182818" stroke="#22c55e" stroke-opacity="0.25" stroke-width="1"/>
+          <path d="M477 311 Q477 298 490 298 Q503 298 503 311" fill="none" stroke="#22c55e" stroke-opacity="0.65" stroke-width="2"/>
+          <rect x="474" y="308" width="6" height="8" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="493" y="308" width="6" height="8" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+          <rect x="503" y="298" width="42" height="18" rx="6" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <text x="524" y="310" text-anchor="middle" font-size="7" fill="#22c55e" fill-opacity="0.8" font-family="monospace">Proposta!</text>
+          <polygon points="506,316 502,322 512,316" fill="rgba(34,197,94,0.12)"/>
+          <rect x="15" y="108" width="80" height="28" rx="8" fill="#0d1a0d" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <circle cx="28" cy="122" r="6" fill="#22c55e" fill-opacity="0.2" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1"/>
+          <text x="38" y="119" font-size="7" fill="#22c55e" fill-opacity="0.7" font-family="monospace">+55 11 9...</text>
+          <text x="38" y="129" font-size="6" fill="#22c55e" fill-opacity="0.4" font-family="monospace">Em ligação</text>
+          <rect x="455" y="108" width="90" height="28" rx="8" fill="#0d1a0d" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+          <circle cx="468" cy="122" r="6" fill="rgba(34,197,94,0.2)" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1"/>
+          <text x="478" y="119" font-size="7" fill="#22c55e" fill-opacity="0.7" font-family="monospace">Deal fechado</text>
+          <text x="478" y="129" font-size="6" fill="#22c55e" fill-opacity="0.4" font-family="monospace">R$ 12.000 ✓</text>
+          <rect x="0" y="405" width="560" height="15" fill="rgba(34,197,94,0.04)"/>
+          <text x="280" y="415" text-anchor="middle" font-size="7" fill="#22c55e" fill-opacity="0.3" font-family="monospace" letter-spacing="3">TIME OPERACIONAL — AO VIVO</text>
+        </svg>
+        <div style="background:#0d0d0d;border-top:1px solid rgba(34,197,94,0.1);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;"></div>
+            <span style="color:#22c55e;font-size:12px;font-family:monospace;">40 agentes online</span>
+          </div>
+          <div style="display:flex;gap:16px;">
+            <span style="color:rgba(255,255,255,0.3);font-size:11px;font-family:monospace;">127 calls hoje</span>
+            <span style="color:#22c55e;font-size:11px;font-family:monospace;">43 deals abertos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -935,7 +1141,7 @@
         <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div class="benefit-title">SDR + Closer prontos</div>
-      <div class="benefit-text">Time completo treinado para o seu produto. Sem processo seletivo, sem onboarding demorado.</div>
+      <div class="benefit-text">Time completo treinado: SDR para qualificar leads, Closer para fechar. Sem processo seletivo, sem onboarding demorado.</div>
     </div>
     <div class="benefit-card">
       <div class="benefit-icon">
@@ -948,7 +1154,7 @@
       <div class="benefit-icon">
         <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="benefit-title">Resultado desde o dia 1</div>
+      <div class="benefit-title">Resultado em 21 dias</div>
       <div class="benefit-text">Operação ativa imediatamente. Sem período de adaptação longo antes de ver o time funcionar.</div>
     </div>
     <div class="benefit-card">
@@ -973,6 +1179,172 @@
       <div class="benefit-text">Cada operação é desenhada para o seu produto, público e ciclo de venda. Nada genérico.</div>
     </div>
   </div>
+</section>
+
+<!-- COMPARATIVO -->
+<section style="background:var(--bg);padding:100px 5%;">
+  <div class="section-tag"><span class="section-tag-dash"></span><span>Análise de custo</span></div>
+  <h2 class="section-title">Quanto custa montar<br>vs <span class="hl">terceirizar?</span></h2>
+  <p class="section-sub" style="margin-bottom:36px;">Veja o que você realmente gasta tentando montar uma equipe comercial interna.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:0 auto;">
+
+    <!-- COLUNA ESQUERDA: Equipe própria -->
+    <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:20px;overflow:hidden;">
+      <div style="background:rgba(239,68,68,0.1);padding:18px 24px;border-bottom:1px solid rgba(239,68,68,0.15);">
+        <div style="color:#ef4444;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">❌ Equipe interna</div>
+        <div style="font-family:'Geist',sans-serif;font-size:28px;font-weight:800;">Montar do zero</div>
+      </div>
+      <div style="padding:20px 24px;display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">SDR (salário + encargos)</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">CLT + FGTS + INSS + férias</div>
+          </div>
+          <div style="color:#ef4444;font-family:'Geist',sans-serif;font-size:18px;font-weight:800;white-space:nowrap;">R$ 6.000/mês</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Closer (salário + encargos)</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">CLT + comissão + benefícios</div>
+          </div>
+          <div style="color:#ef4444;font-family:'Geist',sans-serif;font-size:18px;font-weight:800;white-space:nowrap;">R$ 8.000/mês</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Gerente de vendas</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Gestão e liderança do time</div>
+          </div>
+          <div style="color:#ef4444;font-family:'Geist',sans-serif;font-size:18px;font-weight:800;white-space:nowrap;">R$ 10.000/mês</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Sales Enablement</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Treinamento, playbook, ferramentas</div>
+          </div>
+          <div style="color:#ef4444;font-family:'Geist',sans-serif;font-size:18px;font-weight:800;white-space:nowrap;">R$ 3.000/mês</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Ferramentas (CRM, prospecção)</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">HubSpot, Apollo, LinkedIn Sales Nav</div>
+          </div>
+          <div style="color:#ef4444;font-family:'Geist',sans-serif;font-size:18px;font-weight:800;white-space:nowrap;">R$ 2.000/mês</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Risco trabalhista</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Rescisão, processos, multas</div>
+          </div>
+          <div style="color:#ef4444;font-family:'Geist',sans-serif;font-size:18px;font-weight:800;white-space:nowrap;">Imprevisível</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Tempo até operar</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Seleção + onboarding + ramp-up</div>
+          </div>
+          <div style="color:#ef4444;font-family:'Geist',sans-serif;font-size:18px;font-weight:800;white-space:nowrap;">3 a 6 meses</div>
+        </div>
+        <div style="background:rgba(239,68,68,0.08);border-radius:12px;padding:16px 20px;margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="font-family:'Geist',sans-serif;font-size:16px;font-weight:700;">Custo mensal total</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:2px;">Sem contar rescisões e imprevistos</div>
+          </div>
+          <div style="color:#ef4444;font-family:'Geist',sans-serif;font-size:32px;font-weight:900;">R$ 29.000<span style="font-size:16px;">/mês</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUNA DIREITA: Terceirizado -->
+    <div style="background:var(--green-dim);border:2px solid var(--green);border-radius:20px;overflow:hidden;position:relative;">
+      <div style="position:absolute;top:20px;right:20px;background:var(--green);color:#000;font-size:12px;font-weight:800;padding:6px 14px;border-radius:100px;letter-spacing:1px;">RECOMENDADO</div>
+      <div style="background:rgba(34,197,94,0.15);padding:18px 24px;border-bottom:1px solid rgba(34,197,94,0.2);">
+        <div style="color:var(--green);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">✅ Terceirização Comercial</div>
+        <div style="font-family:'Geist',sans-serif;font-size:28px;font-weight:800;">Conosco</div>
+      </div>
+      <div style="padding:20px 24px;display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(34,197,94,0.1);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">SDR dedicado</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Qualificação de leads inclusa</div>
+          </div>
+          <div style="color:var(--green);font-family:'Geist',sans-serif;font-size:18px;font-weight:800;">✓ Incluso</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(34,197,94,0.1);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Closer dedicado</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Foco em fechamento e conversão</div>
+          </div>
+          <div style="color:var(--green);font-family:'Geist',sans-serif;font-size:18px;font-weight:800;">✓ Incluso</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(34,197,94,0.1);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Gestão e liderança</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Coordenação e performance do time</div>
+          </div>
+          <div style="color:var(--green);font-family:'Geist',sans-serif;font-size:18px;font-weight:800;">✓ Incluso</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(34,197,94,0.1);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Treinamento e playbook</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Sales enablement completo</div>
+          </div>
+          <div style="color:var(--green);font-family:'Geist',sans-serif;font-size:18px;font-weight:800;">✓ Incluso</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(34,197,94,0.1);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Ferramentas e CRM</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Stack comercial configurado</div>
+          </div>
+          <div style="color:var(--green);font-family:'Geist',sans-serif;font-size:18px;font-weight:800;">✓ Incluso</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(34,197,94,0.1);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Risco trabalhista</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">100% responsabilidade nossa</div>
+          </div>
+          <div style="color:var(--green);font-family:'Geist',sans-serif;font-size:18px;font-weight:800;">R$ 0,00</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(34,197,94,0.1);">
+          <div>
+            <div style="font-size:15px;font-weight:600;">Tempo até operar</div>
+            <div style="font-size:13px;color:var(--gray2);margin-top:3px;">Imersão + treinamento express</div>
+          </div>
+          <div style="color:var(--green);font-family:'Geist',sans-serif;font-size:18px;font-weight:800;">21 dias</div>
+        </div>
+        <div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:12px;padding:16px 20px;margin-top:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <div>
+              <div style="font-family:'Geist',sans-serif;font-size:16px;font-weight:700;">Investimento mensal</div>
+              <div style="font-size:13px;color:var(--gray2);margin-top:2px;">Tudo incluso, sem surpresas</div>
+            </div>
+            <div style="color:var(--green);font-family:'Geist',sans-serif;font-size:32px;font-weight:900;">Sob consulta</div>
+          </div>
+          <a href="#formulario" style="display:block;background:var(--green);color:#000;font-family:'Geist',sans-serif;font-weight:800;font-size:15px;text-align:center;padding:16px;border-radius:10px;text-decoration:none;letter-spacing:0.3px;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+            Quero uma proposta →
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Economia highlight -->
+  <div style="max-width:1000px;margin:16px auto 0;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.18);border-radius:16px;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div style="width:52px;height:52px;background:var(--green);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;">Você pode economizar mais de <span style="color:var(--green);">R$ 15.000/mês</span></div>
+        <div style="color:var(--gray);font-size:14px;margin-top:4px;">Comparado ao custo real de uma equipe comercial interna — sem contar rescisões e imprevistos.</div>
+      </div>
+    </div>
+    <a href="#formulario" class="btn-primary" style="white-space:nowrap;">
+      Calcular minha economia →
+    </a>
+  </div>
+
 </section>
 
 <!-- TESTIMONIALS -->
@@ -1103,7 +1475,7 @@
       </div>
       <div class="form-group">
         <label class="form-label">WhatsApp</label>
-        <input type="tel" name="whatsapp" id="whatsappInput" class="form-input" placeholder="(11) 99999-9999" required>
+        <input type="tel" name="whatsapp" class="form-input" placeholder="(11) 99999-9999" required>
       </div>
       <div class="form-group">
         <label class="form-label">E-mail</label>
@@ -1132,7 +1504,7 @@
       <button class="form-submit" type="submit" id="submitBtn">Quero meu time comercial →</button>
       </form>
       <div class="form-divider">ou</div>
-      <a href="https://wa.me/5515996562134?text=Ol%C3%A1%20Eduardo%2C%20quero%20saber%20sobre%20terceiriza%C3%A7%C3%A3o%20comercial" target="_blank" class="form-whatsapp">
+      <a href="https://wa.me/5515996563134?text=Olá%20Eduardo,%20quero%20saber%20sobre%20terceirização%20comercial" target="_blank" class="form-whatsapp">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="#22c55e"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Falar pelo WhatsApp
       </a>
@@ -1147,7 +1519,7 @@
 </footer>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/5515996562134?text=Ol%C3%A1%20Eduardo%2C%20quero%20saber%20sobre%20terceiriza%C3%A7%C3%A3o%20comercial" target="_blank" class="wa-float">
+<a href="https://wa.me/5515996563134?text=Olá%20Eduardo,%20quero%20saber%20sobre%20terceirização%20comercial" target="_blank" class="wa-float">
   <svg viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -1187,15 +1559,6 @@ async function submitForm(event) {
     alert('Erro ao enviar. Tente novamente ou fale pelo WhatsApp.');
   }
 }
-
-// Máscara telefone
-document.getElementById('whatsappInput').addEventListener('input', function(e) {
-  let v = e.target.value.replace(/\D/g, '').slice(0, 11);
-  if (v.length > 6) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
-  else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
-  else if (v.length > 0) v = '(' + v;
-  e.target.value = v;
-});
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
