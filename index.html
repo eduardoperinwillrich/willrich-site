@@ -1659,6 +1659,11 @@ async function submitForm(event) {
     });
 
     if (res.ok) {
+      // ✅ Evento: Lead gerado (formulário enviado)
+      fbq('track', 'Lead');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'generate_lead', method: 'form' });
+
       form.innerHTML = '<div style="text-align:center;padding:40px 0"><div style="font-size:48px;margin-bottom:16px">✅</div><div style="font-family:Geist,sans-serif;font-size:22px;font-weight:800;margin-bottom:8px">Mensagem enviada!</div><div style="color:#9ca3af;font-size:15px">Entraremos em contato em até 24 horas úteis.</div></div>';
     } else {
       throw new Error();
@@ -1670,7 +1675,85 @@ async function submitForm(event) {
   }
 }
 
-// Scroll reveal
+// ── TRACKING: Form start (primeiro campo preenchido)
+let formStarted = false;
+document.getElementById('contactForm').addEventListener('input', function() {
+  if (!formStarted) {
+    formStarted = true;
+    fbq('trackCustom', 'FormStart');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'form_start' });
+  }
+}, { once: false });
+
+// ── TRACKING: Clique em botões WhatsApp
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    fbq('track', 'Contact');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'whatsapp_click', location: el.closest('section') ? el.closest('section').className : 'float' });
+  });
+});
+
+// ── TRACKING: Clique nos botões CTA principais
+document.querySelectorAll('.btn-primary, .nav-cta, .form-submit').forEach(function(el) {
+  el.addEventListener('click', function() {
+    fbq('track', 'InitiateCheckout');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'cta_click', label: el.textContent.trim() });
+  });
+});
+
+// ── TRACKING: Visualização de seções-chave
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      const id = e.target.id || e.target.className.split(' ')[0];
+      fbq('trackCustom', 'SectionView', { section: id });
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'section_view', section_name: id });
+      sectionObserver.unobserve(e.target); // dispara só uma vez por seção
+    }
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('section').forEach(function(s) {
+  sectionObserver.observe(s);
+});
+
+// ── TRACKING: Seção Compare (alto valor)
+const compareSection = document.querySelector('.compare, [class*="compare"]');
+if (compareSection) {
+  const compareObs = new IntersectionObserver((entries) => {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        fbq('track', 'ViewContent', { content_name: 'Comparativo de Custo' });
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'view_compare_section' });
+        compareObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  compareObs.observe(compareSection);
+}
+
+// ── TRACKING: Seção Formulário (intenção de contato)
+const formSection = document.getElementById('formulario');
+if (formSection) {
+  const formObs = new IntersectionObserver((entries) => {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        fbq('trackCustom', 'ViewForm');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'view_form_section' });
+        formObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  formObs.observe(formSection);
+}
+
+// ── Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
