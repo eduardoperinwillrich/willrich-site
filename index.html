@@ -815,8 +815,48 @@ src="https://www.facebook.com/tr?id=2076606186242596&ev=PageView&noscript=1"/></
     .pain-grid, .benefits-grid, .testimonials-grid { grid-template-columns: 1fr; }
     .form-wrapper { grid-template-columns: 1fr; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
-    .hero-stats { flex-wrap: wrap; gap: 24px; }
     footer { flex-direction: column; gap: 12px; text-align: center; }
+
+    /* Hero: coluna única, sem ilustração */
+    .hero { padding: 100px 5% 60px; }
+    .hero > div[style*="grid-template-columns"] {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 40px !important;
+    }
+    .hero-content { max-width: 100% !important; }
+    /* Esconde SVG no mobile */
+    .hero > div > div:last-child { display: none !important; }
+    .hero-title { font-size: 36px !important; letter-spacing: -1px; }
+    .hero-stats {
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+    .hero-stats > div { min-width: 80px; }
+    .hero-stat-num { font-size: 28px; }
+
+    /* Seção Como Funciona: cards em coluna única */
+    .how > div[style*="grid-template-columns:repeat(4"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Seção Comparativo: coluna única */
+    section > div[style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* CTA bar wrap */
+    section > div[style*="justify-content:space-between"] {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+
+    /* Seção tag centralizada */
+    .section-tag { flex-wrap: wrap; }
+
+    /* Ajuste geral de seções */
+    section { padding: 60px 5%; }
   }
 </style>
 </head>
