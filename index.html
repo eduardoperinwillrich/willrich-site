@@ -1696,14 +1696,33 @@ async function submitForm(event) {
 
   const data = new FormData(form);
 
-  try {
-    const res = await fetch('https://formspree.io/f/mkopkkeq', {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
+  // Monta objeto JSON para o Make
+  const payload = {
+    nome:        data.get('nome'),
+    empresa:     data.get('empresa'),
+    whatsapp:    data.get('whatsapp'),
+    email:       data.get('email'),
+    faturamento: data.get('faturamento'),
+    desafio:     data.get('desafio'),
+    data_hora:   new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+  };
 
-    if (res.ok) {
+  try {
+    // Envia para Formspree e Make em paralelo
+    const [resFormspree] = await Promise.all([
+      fetch('https://formspree.io/f/mkopkkeq', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }),
+      fetch('https://hook.us1.make.celonis.com/tvepbjueegiuytiiyev39p8c2j7ghgp8', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json' }
+      })
+    ]);
+
+    if (resFormspree.ok) {
       // ✅ Evento: Lead gerado (formulário enviado)
       fbq('track', 'Lead');
       window.dataLayer = window.dataLayer || [];
